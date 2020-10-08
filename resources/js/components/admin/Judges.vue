@@ -105,7 +105,7 @@ export default {
     },
 
     created() {
-        axios.get('/api/spot/get')
+        axios.get('/api/spotsControllert/get')
             .then(response => this.Spots =  response.data);
 
     },
@@ -117,7 +117,7 @@ export default {
             axios.post('/api/judge', this.fields);
             //alert(' ok');
             this.show = true;
-            //reload page after add new spot
+            //reload page after add new spotsControllert
             setTimeout( () => window.location.reload(), 3100);
 
         },

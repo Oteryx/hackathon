@@ -2011,7 +2011,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    axios.get('/api/spot/get').then(function (response) {
+    axios.get('/api/spotsControllert/get').then(function (response) {
       return _this.Spots = response.data;
     });
   },
@@ -2021,7 +2021,7 @@ __webpack_require__.r(__webpack_exports__);
       //alert("add");
       axios.post('/api/judge', this.fields); //alert(' ok');
 
-      this.show = true; //reload page after add new spot
+      this.show = true; //reload page after add new spotsControllert
 
       setTimeout(function () {
         return window.location.reload();
@@ -2160,16 +2160,16 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    axios.get('/api/spot/get').then(function (response) {
+    axios.get('/api/spotsControllert/get').then(function (response) {
       return _this.Spots = response.data;
     });
   },
   methods: {
-    // creer un nouveau spot
+    // creer un nouveau spotsControllert
     addSpot: function addSpot() {
-      axios.post('/api/spot', this.fields); //alert(' ok');
+      axios.post('/api/spotsControllert', this.fields); //alert(' ok');
 
-      this.show = true; //reload page after add new spot
+      this.show = true; //reload page after add new spotsControllert
 
       setTimeout(function () {
         return window.location.reload();
@@ -2278,17 +2278,17 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    axios.get('/api/spot/get').then(function (response) {
+    axios.get('/api/spotsControllert/get').then(function (response) {
       return _this.Spots = response.data;
     });
   },
   methods: {
-    // creer un nouveau spot
+    // creer un nouveau spotsControllert
     addTeam: function addTeam() {
       //alert("add");
       axios.post('/api/team', this.fields); //alert(' ok');
 
-      this.show = true; //reload page after add new spot
+      this.show = true; //reload page after add new spotsControllert
 
       setTimeout(function () {
         return window.location.reload();

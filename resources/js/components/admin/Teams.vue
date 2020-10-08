@@ -89,17 +89,17 @@
             }
         },
         created() {
-            axios.get('/api/spot/get')
+            axios.get('/api/spotsControllert/get')
                 .then(response => this.Spots =  response.data);
         },
         methods: {
-            // creer un nouveau spot
+            // creer un nouveau spotsControllert
             addTeam() {
                 //alert("add");
                 axios.post('/api/team', this.fields);
                 //alert(' ok');
                 this.show = true;
-                //reload page after add new spot
+                //reload page after add new spotsControllert
                 setTimeout( () => window.location.reload(), 3100);
             },
         },
