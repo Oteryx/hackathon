@@ -6,7 +6,6 @@ import Teams from "../components/admin/Teams";
 import Judges from "../components/admin/Judges";
 import Spots from "../components/admin/Spots";
 
-
 Vue.use(VueRouter);
 
 const routes = [

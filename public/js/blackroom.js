@@ -1912,8 +1912,122 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Judges"
+  name: "Judges",
+  data: function data() {
+    return {
+      valid: true,
+      fields: {},
+      errors: {},
+      Spots: [],
+      // Rules
+      nameRules: [function (v) {
+        return !!v || 'Le nom est obligatoire';
+      }],
+      emailRules: [function (v) {
+        return !!v || 'L\'adresse mail est obligatoire';
+      }],
+      spotRules: [function (v) {
+        return !!v || 'Ce champ est obligatoire';
+      }],
+      passwordRules: [function (v) {
+        return !!v || 'Ce champ est obligatoire';
+      }],
+      // toast
+      show: false,
+      top: true,
+      message: "Le jury à été ajouté",
+      timeout: 3000
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    axios.get('/api/spot/get').then(function (response) {
+      return _this.Spots = response.data;
+    });
+  },
+  methods: {
+    // creer un nouveau jury
+    addJudge: function addJudge() {
+      //alert("add");
+      axios.post('/api/judge', this.fields); //alert(' ok');
+
+      this.show = true; //reload page after add new spot
+
+      setTimeout(function () {
+        return window.location.reload();
+      }, 3100);
+    }
+  }
 });
 
 /***/ }),
@@ -1931,8 +2045,137 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Spots"
+  name: "Spots",
+  data: function data() {
+    return {
+      valid: true,
+      fields: {},
+      errors: {},
+      // Rules
+      nameRules: [function (v) {
+        return !!v || 'Le nom est obligatoire';
+      }],
+      // toast
+      show: false,
+      top: true,
+      message: "Le plateau à été ajouté",
+      timeout: 3000,
+      Spots: []
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    axios.get('/api/spot/get').then(function (response) {
+      return _this.Spots = response.data;
+    });
+  },
+  methods: {
+    // creer un nouveau spot
+    addSpot: function addSpot() {
+      axios.post('/api/spot', this.fields); //alert(' ok');
+
+      this.show = true; //reload page after add new spot
+
+      setTimeout(function () {
+        return window.location.reload();
+      }, 3100);
+    }
+  }
 });
 
 /***/ }),
@@ -1950,8 +2193,108 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Teams"
+  name: "Teams",
+  data: function data() {
+    return {
+      valid: true,
+      fields: {},
+      errors: {},
+      Spots: [],
+      // Rules
+      nameRules: [function (v) {
+        return !!v || 'Le nom est obligatoire';
+      }],
+      spotRules: [function (v) {
+        return !!v || 'Ce champ est obligatoire';
+      }],
+      projectRules: [function (v) {
+        return !!v || 'Ce champ est obligatoire';
+      }],
+      // toast
+      show: false,
+      top: true,
+      message: "L\'équipe à été ajoutée",
+      timeout: 3000
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    axios.get('/api/spot/get').then(function (response) {
+      return _this.Spots = response.data;
+    });
+  },
+  methods: {
+    // creer un nouveau spot
+    addTeam: function addTeam() {
+      //alert("add");
+      axios.post('/api/team', this.fields); //alert(' ok');
+
+      this.show = true; //reload page after add new spot
+
+      setTimeout(function () {
+        return window.location.reload();
+      }, 3100);
+    }
+  }
 });
 
 /***/ }),
@@ -2068,35 +2411,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       drawer: null,
       items: [{
-        icon: 'mdi-account-group',
-        text: 'Equipes',
+        icon: 'work',
+        text: 'Projets',
         linkName: 'teams'
       }, {
         divider: true
       }, {
-        icon: 'mdi-star-circle',
+        icon: 'person',
         text: 'Jurys',
         linkName: 'judges'
       }, {
         divider: true
       }, {
-        icon: 'mdi-map-marker',
+        icon: 'place',
         text: 'Plateaux',
         linkName: 'spots'
       }, {
         divider: true
       }, {
-        icon: 'mdi-cog',
+        icon: 'settings',
         text: 'Settings',
         linkName: '/'
-      }, {
-        icon: 'mdi-help',
-        text: 'Help'
       }]
     };
   },
@@ -6665,7 +7006,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n#keep .v-navigation-drawer__border[data-v-10f98fd8] {\n    display: none\n}\n#keep[data-v-10f98fd8]{\n    width: 100%;\n}\n", ""]);
+exports.push([module.i, "\n#keep .v-navigation-drawer__border[data-v-10f98fd8] {\n    display: none\n}\n#keep[data-v-10f98fd8] {\n    width: 100%;\n}\n", ""]);
 
 // exports
 
@@ -38411,7 +38752,176 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("all jurys")])
+  return _c(
+    "div",
+    [
+      _c(
+        "v-snackbar",
+        {
+          attrs: { top: _vm.top, color: "green", timeout: _vm.timeout },
+          model: {
+            value: _vm.show,
+            callback: function($$v) {
+              _vm.show = $$v
+            },
+            expression: "show"
+          }
+        },
+        [_vm._v("\n        " + _vm._s(_vm.message) + "\n    ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "v-card",
+        { attrs: { width: "100%", white: "" } },
+        [
+          _c(
+            "v-card-title",
+            [
+              _c("v-icon", [
+                _vm._v("\n                mdi-plus\n            ")
+              ]),
+              _vm._v("\n            Ajouter un jury\n        ")
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-form",
+            {
+              on: {
+                submit: function($event) {
+                  $event.preventDefault()
+                  return _vm.addJudge()
+                }
+              },
+              model: {
+                value: _vm.valid,
+                callback: function($$v) {
+                  _vm.valid = $$v
+                },
+                expression: "valid"
+              }
+            },
+            [
+              _c(
+                "v-card-text",
+                [
+                  _c("v-text-field", {
+                    attrs: {
+                      "prepend-icon": "create",
+                      name: "name",
+                      label: "Nom",
+                      type: "text",
+                      color: "#e91f62",
+                      rules: _vm.nameRules,
+                      required: ""
+                    },
+                    model: {
+                      value: _vm.fields.name,
+                      callback: function($$v) {
+                        _vm.$set(_vm.fields, "name", $$v)
+                      },
+                      expression: "fields.name"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("v-select", {
+                    attrs: {
+                      items: _vm.Spots,
+                      "item-text": "name",
+                      "item-value": "id",
+                      id: "spot_id",
+                      "prepend-icon": "place",
+                      name: "spot_id",
+                      type: "text",
+                      color: "#e91f62",
+                      label: "Plateau",
+                      rules: _vm.spotRules,
+                      required: ""
+                    },
+                    model: {
+                      value: _vm.fields.spot_id,
+                      callback: function($$v) {
+                        _vm.$set(_vm.fields, "spot_id", $$v)
+                      },
+                      expression: "fields.spot_id"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("v-text-field", {
+                    attrs: {
+                      id: "email",
+                      "prepend-icon": "local_post_office",
+                      name: "email",
+                      label: "Email",
+                      type: "email",
+                      color: "#e91f62",
+                      rules: _vm.emailRules,
+                      required: ""
+                    },
+                    model: {
+                      value: _vm.fields.email,
+                      callback: function($$v) {
+                        _vm.$set(_vm.fields, "email", $$v)
+                      },
+                      expression: "fields.email"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("v-text-field", {
+                    attrs: {
+                      id: "password",
+                      "prepend-icon": "enhanced_encryption",
+                      name: "password",
+                      label: "Mot de passe",
+                      type: "text",
+                      color: "#e91f62",
+                      rules: _vm.passwordRules,
+                      required: ""
+                    },
+                    model: {
+                      value: _vm.fields.password,
+                      callback: function($$v) {
+                        _vm.$set(_vm.fields, "password", $$v)
+                      },
+                      expression: "fields.password"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-card-actions",
+                { staticStyle: { padding: "20px" } },
+                [
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: {
+                        color: "#e91f62",
+                        type: "submit",
+                        white: "",
+                        "x-large": "",
+                        disabled: !_vm.valid
+                      }
+                    },
+                    [_vm._v("créer")]
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -38435,7 +38945,214 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("all Plateaux")])
+  return _c(
+    "div",
+    [
+      _c(
+        "v-snackbar",
+        {
+          attrs: { top: _vm.top, color: "green", timeout: _vm.timeout },
+          model: {
+            value: _vm.show,
+            callback: function($$v) {
+              _vm.show = $$v
+            },
+            expression: "show"
+          }
+        },
+        [_vm._v("\n        " + _vm._s(_vm.message) + "\n    ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "v-card",
+        { attrs: { width: "100%", white: "" } },
+        [
+          _c(
+            "v-card-title",
+            [
+              _c("v-icon", [
+                _vm._v("\n                mdi-plus\n            ")
+              ]),
+              _vm._v("\n            Ajouter un plateau\n        ")
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-form",
+            {
+              on: {
+                submit: function($event) {
+                  $event.preventDefault()
+                  return _vm.addSpot()
+                }
+              },
+              model: {
+                value: _vm.valid,
+                callback: function($$v) {
+                  _vm.valid = $$v
+                },
+                expression: "valid"
+              }
+            },
+            [
+              _c(
+                "v-card-text",
+                [
+                  _c("v-text-field", {
+                    attrs: {
+                      "prepend-icon": "create",
+                      name: "name",
+                      label: "Nom",
+                      type: "text",
+                      color: "#e91f62",
+                      rules: _vm.nameRules,
+                      required: ""
+                    },
+                    model: {
+                      value: _vm.fields.name,
+                      callback: function($$v) {
+                        _vm.$set(_vm.fields, "name", $$v)
+                      },
+                      expression: "fields.name"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-card-actions",
+                { staticStyle: { padding: "20px" } },
+                [
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: {
+                        color: "#e91f62",
+                        type: "submit",
+                        white: "",
+                        "x-large": "",
+                        disabled: !_vm.valid
+                      }
+                    },
+                    [_vm._v("créer\n                ")]
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        _vm._l(_vm.Spots, function(Spot) {
+          return _c(
+            "v-card",
+            { staticClass: "mx-auto mb-4", attrs: { dark: "" } },
+            [
+              _c(
+                "v-list-item",
+                { attrs: { "three-line": "" } },
+                [
+                  _c(
+                    "v-list-item-content",
+                    [
+                      _c(
+                        "v-list-item-title",
+                        { staticClass: "headline mb-1" },
+                        [
+                          _c("v-chip", { attrs: { color: "gray" } }, [
+                            _vm._v(_vm._s(Spot.id))
+                          ]),
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(Spot.name) +
+                              "\n                    "
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c("v-list-item-subtitle", [_vm._v(_vm._s(Spot.address))])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-list-item-action-text", { attrs: { color: "green" } }, [
+                    _c(
+                      "div",
+                      { staticClass: "overline mb-4" },
+                      [
+                        _c(
+                          "v-card-actions",
+                          [
+                            _c(
+                              "v-btn",
+                              {
+                                staticClass: "mx-2",
+                                attrs: {
+                                  fab: "",
+                                  dark: "",
+                                  small: "",
+                                  color: "green"
+                                }
+                              },
+                              [
+                                _c("v-icon", { attrs: { dark: "" } }, [
+                                  _vm._v(
+                                    "\n                                    mdi-pencil\n                                "
+                                  )
+                                ])
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-btn",
+                              {
+                                staticClass: "mx-2",
+                                attrs: {
+                                  fab: "",
+                                  dark: "",
+                                  small: "",
+                                  color: "red"
+                                }
+                              },
+                              [
+                                _c("v-icon", { attrs: { dark: "" } }, [
+                                  _vm._v(
+                                    "\n                                    mdi-delete\n                                "
+                                  )
+                                ])
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                ],
+                1
+              )
+            ],
+            1
+          )
+        }),
+        1
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -38459,7 +39176,156 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("All Teams")])
+  return _c(
+    "div",
+    [
+      _c(
+        "v-snackbar",
+        {
+          attrs: { top: _vm.top, color: "green", timeout: _vm.timeout },
+          model: {
+            value: _vm.show,
+            callback: function($$v) {
+              _vm.show = $$v
+            },
+            expression: "show"
+          }
+        },
+        [_vm._v("\n        " + _vm._s(_vm.message) + "\n    ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "v-card",
+        { attrs: { width: "100%", white: "" } },
+        [
+          _c(
+            "v-card-title",
+            [
+              _c("v-icon", [
+                _vm._v("\n                mdi-plus\n            ")
+              ]),
+              _vm._v("\n            Ajouter un projet\n        ")
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-form",
+            {
+              on: {
+                submit: function($event) {
+                  $event.preventDefault()
+                  return _vm.addTeam()
+                }
+              },
+              model: {
+                value: _vm.valid,
+                callback: function($$v) {
+                  _vm.valid = $$v
+                },
+                expression: "valid"
+              }
+            },
+            [
+              _c(
+                "v-card-text",
+                [
+                  _c("v-text-field", {
+                    attrs: {
+                      "prepend-icon": "create",
+                      name: "name",
+                      label: "Nom",
+                      type: "text",
+                      color: "#e91f62",
+                      rules: _vm.nameRules,
+                      required: ""
+                    },
+                    model: {
+                      value: _vm.fields.name,
+                      callback: function($$v) {
+                        _vm.$set(_vm.fields, "name", $$v)
+                      },
+                      expression: "fields.name"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("v-select", {
+                    attrs: {
+                      items: _vm.Spots,
+                      "item-text": "name",
+                      "item-value": "id",
+                      id: "spot_id",
+                      "prepend-icon": "place",
+                      name: "spot_id",
+                      type: "text",
+                      color: "#e91f62",
+                      label: "Plateau",
+                      rules: _vm.spotRules,
+                      required: ""
+                    },
+                    model: {
+                      value: _vm.fields.spot_id,
+                      callback: function($$v) {
+                        _vm.$set(_vm.fields, "spot_id", $$v)
+                      },
+                      expression: "fields.spot_id"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("v-text-field", {
+                    attrs: {
+                      id: "project",
+                      "prepend-icon": "work",
+                      name: "project",
+                      label: "Projet",
+                      type: "text",
+                      color: "#e91f62",
+                      rules: _vm.projectRules,
+                      required: ""
+                    },
+                    model: {
+                      value: _vm.fields.project,
+                      callback: function($$v) {
+                        _vm.$set(_vm.fields, "project", $$v)
+                      },
+                      expression: "fields.project"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-card-actions",
+                { staticStyle: { padding: "20px" } },
+                [
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: {
+                        color: "#e91f62",
+                        type: "submit",
+                        white: "",
+                        "x-large": "",
+                        disabled: !_vm.valid
+                      }
+                    },
+                    [_vm._v("créer")]
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -38489,17 +39355,25 @@ var render = function() {
     [
       _c(
         "v-app-bar",
-        { attrs: { app: "", "clipped-left": "", color: "pink" } },
+        { attrs: { app: "", "clipped-left": "", color: "#29B6F6" } },
         [
-          _c("v-app-bar-nav-icon", {
-            on: {
-              click: function($event) {
-                _vm.drawer = !_vm.drawer
+          _c(
+            "v-app-bar-nav-icon",
+            {
+              on: {
+                click: function($event) {
+                  _vm.drawer = !_vm.drawer
+                }
               }
-            }
-          }),
+            },
+            [
+              _c("span", { staticClass: "material-icons" }, [
+                _vm._v("\nmenu\n")
+              ])
+            ]
+          ),
           _vm._v(" "),
-          _c("span", { staticClass: "title ml-3 mr-5" }, [
+          _c("span", { staticClass: "title ml-3 mr-5 " }, [
             _vm._v("Quai Alpha "),
             _c("span", { staticClass: "font-weight-light" }, [
               _vm._v("Classement")
@@ -38530,7 +39404,13 @@ var render = function() {
                           ),
                           on
                         ),
-                        [_c("v-icon", [_vm._v("mdi-dots-vertical")])],
+                        [
+                          _c("v-icon", [
+                            _vm._v(
+                              "\n                            exit_to_app\n                        "
+                            )
+                          ])
+                        ],
                         1
                       )
                     ]
@@ -38539,7 +39419,7 @@ var render = function() {
               ])
             },
             [
-              _vm._v(" "),
+              _vm._v("s\n                "),
               _c(
                 "v-list",
                 [
@@ -38590,9 +39470,9 @@ var render = function() {
                               item.heading
                                 ? _c("v-subheader", [
                                     _vm._v(
-                                      "\n                            " +
+                                      "\n                                " +
                                         _vm._s(item.heading) +
-                                        "\n                        "
+                                        "\n                            "
                                     )
                                   ])
                                 : _vm._e()
@@ -38605,7 +39485,7 @@ var render = function() {
                             { staticClass: "text-right", attrs: { cols: "6" } },
                             [
                               _c("v-btn", { attrs: { small: "", text: "" } }, [
-                                _vm._v("edit")
+                                _vm._v("edit\n                            ")
                               ])
                             ],
                             1
@@ -38645,9 +39525,9 @@ var render = function() {
                                 { staticClass: "grey--text" },
                                 [
                                   _vm._v(
-                                    "\n                            " +
+                                    "\n                                " +
                                       _vm._s(item.text) +
-                                      "\n                        "
+                                      "\n                            "
                                   )
                                 ]
                               )
@@ -99107,6 +99987,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vuetify__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./vuetify */ "./resources/js/vuetify/index.js");
 /* harmony import */ var _store_blackroom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store/blackroom */ "./resources/js/store/blackroom.js");
 /* harmony import */ var _router_blackroom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./router/blackroom */ "./resources/js/router/blackroom.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -99118,6 +100000,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 
 Vue.use(vuex__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
 
 
 /**
@@ -99141,7 +100024,8 @@ var app = new Vue({
   el: '#app',
   store: _store_blackroom__WEBPACK_IMPORTED_MODULE_2__["default"],
   vuetify: _vuetify__WEBPACK_IMPORTED_MODULE_1__["default"],
-  router: _router_blackroom__WEBPACK_IMPORTED_MODULE_3__["default"]
+  router: _router_blackroom__WEBPACK_IMPORTED_MODULE_3__["default"],
+  axios: axios__WEBPACK_IMPORTED_MODULE_4___default.a
 });
 
 /***/ }),

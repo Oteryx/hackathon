@@ -1,16 +1,16 @@
 <template>
     <v-app id="keep">
+
         <v-app-bar
             app
             clipped-left
-            color="pink"
+            color="#29B6F6"
         >
-            <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-            <span class="title ml-3 mr-5">Quai Alpha&nbsp;<span class="font-weight-light">Classement</span></span>
-
-
+            <v-app-bar-nav-icon @click="drawer = !drawer"><span class="material-icons">
+menu
+</span></v-app-bar-nav-icon>
+            <span class="title ml-3 mr-5 ">Quai Alpha&nbsp;<span class="font-weight-light">Classement</span></span>
             <v-spacer></v-spacer>
-
             <v-menu
                 left
                 bottom
@@ -21,10 +21,11 @@
                         v-bind="attrs"
                         v-on="on"
                     >
-                        <v-icon>mdi-dots-vertical</v-icon>
+                        <v-icon>
+                            exit_to_app
+                        </v-icon>
                     </v-btn>
-                </template>
-
+                </template>s
                 <v-list>
                     <v-list-item
                         @click="() => {}"
@@ -34,7 +35,6 @@
                 </v-list>
             </v-menu>
         </v-app-bar>
-
         <v-navigation-drawer
             v-model="drawer"
             app
@@ -63,7 +63,8 @@
                             <v-btn
                                 small
                                 text
-                            >edit</v-btn>
+                            >edit
+                            </v-btn>
                         </v-col>
                     </v-row>
                     <v-divider
@@ -86,7 +87,7 @@
                             <v-icon>{{ item.icon }}</v-icon>
                         </v-list-item-action>
                         <v-list-item-content>
-                            <v-list-item-title class="grey--text" >
+                            <v-list-item-title class="grey--text">
                                 {{ item.text }}
                             </v-list-item-title>
                         </v-list-item-content>
@@ -106,32 +107,29 @@
         data: () => ({
             drawer: null,
             items: [
-                { icon: 'mdi-account-group', text: 'Equipes', linkName:'teams' },
-                { divider: true },
-                { icon: 'mdi-star-circle', text: 'Jurys', linkName:'judges' },
-                { divider: true },
-                { icon: 'mdi-map-marker', text: 'Plateaux', linkName:'spots' },
-                { divider: true },
-                { icon: 'mdi-cog', text: 'Settings', linkName:'/' },
-                { icon: 'mdi-help', text: 'Help' },
+                {icon: 'work', text: 'Projets', linkName: 'teams'},
+                {divider: true},
+                {icon: 'person', text: 'Jurys', linkName: 'judges'},
+                {divider: true},
+                {icon: 'place', text: 'Plateaux', linkName: 'spots'},
+                {divider: true},
+                {icon: 'settings', text: 'Settings', linkName: '/'},
             ],
         }),
-
         methods: {
             goTolink(linkName) {
-                this.$root.$router.push({name: linkName}).catch(()=>{});
+                this.$root.$router.push({name: linkName}).catch(() => {
+                });
             },
-
         }
     }
-
 </script>
-
 <style scoped>
     #keep .v-navigation-drawer__border {
         display: none
     }
-    #keep{
+
+    #keep {
         width: 100%;
     }
 </style>

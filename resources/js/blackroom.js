@@ -13,6 +13,8 @@ import vuetify from './vuetify'
 Vue.use(Vuex)
 import store from "./store/blackroom"
 import router from "./router/blackroom"
+import axios from "axios";
+
 
 /**
  * The following block of code may be used to automatically register your
@@ -37,5 +39,6 @@ const app = new Vue({
     el: '#app',
     store,
     vuetify,
-    router
+    router,
+    axios
 });
