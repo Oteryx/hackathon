@@ -1,17 +1,27 @@
 <template>
-    <v-app>
-        <v-main>
-            <router-view></router-view>
-            <router-link :to="{ name: 'Login' }">admin</router-link> |
-            <router-link :to="{ name: 'dashboard' }">loginadmin</router-link>
-        </v-main>
+    <v-app style="background-color:#e4e4e4;">
+        <transition name="fade" mode="out-in" appear>
+<router-view></router-view>
+            </transition>
     </v-app>
 </template>
 
 <script>
     export default {
         mounted() {
-            console.log('Component mounted.')
+
         }
     }
 </script>
+
+<style>
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity 0.3s
+    }
+
+    .fade-enter, .fade-leave-active {
+        opacity: 0
+    }
+
+</style>
+

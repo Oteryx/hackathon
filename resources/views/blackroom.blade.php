@@ -8,9 +8,8 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="{{ asset('js/blackroom.js') }}" defer></script>
-    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="{{ asset('js/blackroom.js') }}" defer></script>
 </head>
 <body>
 <div id="app">
