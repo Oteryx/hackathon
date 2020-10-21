@@ -6,8 +6,8 @@ import general from '../components/blackroom/general'
 import users from '../components/blackroom/users'
 import spots from '../components/blackroom/spots'
 import projects from '../components/blackroom/projects'
-import editspot from '../components/blackroom/editspots';
-import scoring from '../components/blackroom/scoring'
+import projectsStatus from '../components/blackroom/projectsStatus'
+
 
 Vue.use(VueRouter)
 
@@ -33,32 +33,34 @@ const routes = [
                 component: users
             },
             {
-                path: 'scoring',
-                name: 'scoring',
-                component: scoring
-            },
-            {
                 path: 'spots',
                 name: 'spots',
                 component: spots
             },
             {
-                path: 'editspot/:id',
-                name: 'editspot',
-                component: editspot
+                path: 'spots/:id',
+                name: 'spotsEdit',
+                component: spots
             },
             {
                 path: 'projects',
                 name: 'projects',
                 component: projects
             },
+            {
+                path: 'projects-status',
+                name: 'projectsStatus',
+                component: projectsStatus
+            },
         ]
     },
-];
+
+]
+
 const router = new VueRouter({
     mode: 'history',
     base: process.env.BASE_URL,
     routes
-});
+})
 
 export default router

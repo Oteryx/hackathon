@@ -9,4 +9,9 @@ class Status extends Model
     protected $fillable = [
         'name'
     ];
+
+    public function projects()
+    {
+        return $this->hasMany('App\Project');
+    }
 }

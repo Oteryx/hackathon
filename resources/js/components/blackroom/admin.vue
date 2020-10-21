@@ -3,9 +3,9 @@
         <v-snackbar
             v-model="$store.state.snack.status"
             timeout="3000"
-            :color="$store.state.snack.color">
-
-            <strong> {{ $store.state.snack.text}} </strong>
+            :color="$store.state.snack.color"
+        >
+           <strong> {{ $store.state.snack.text}} </strong>
 
         </v-snackbar>
 
@@ -14,30 +14,31 @@
             permanent
             dark
             fixed
-            app>
-
+            app
+        >
             <v-list style="padding-top:20px;"
-                    dense>
-
-
+                    dense
+            >
                 <div><img src="/img/logo-qa-white.svg" width="250" style="margin-bottom:30px;">
                 </div>
-                <v-subheader><strong>GESTION EVENTS</strong></v-subheader>
+                <v-subheader><strong>EVENEMENTS</strong></v-subheader>
                 <v-list-item-group
-                    active-class=" text--accent-4">
-
+                    active-class=" text--accent-4"
+                >
                     <v-divider></v-divider>
-                    <v-list-item @click="goToRoute('scoring')">
+                    <v-list-item @click="goToRoute('projectsStatus')">
                         <v-list-item-icon>
-                            <v-icon>emoji_events</v-icon>
+                            <v-icon>account_box</v-icon>
                         </v-list-item-icon>
-                        <v-list-item-title><strong>OUVERTURE SCORING</strong></v-list-item-title>
+                        <v-list-item-title><strong>STATUS DES PROJETS</strong></v-list-item-title>
                     </v-list-item>
+
+
                 </v-list-item-group>
                 <v-subheader><strong>GESTION</strong></v-subheader>
                 <v-list-item-group
-                    active-class=" text--accent-4">
-
+                    active-class=" text--accent-4"
+                >
                     <v-divider></v-divider>
                     <v-list-item @click="goToRoute('users')">
                         <v-list-item-icon>
@@ -67,9 +68,9 @@
         <v-app-bar
             color="black"
             dark
-            app>
+            app
 
-
+        >
             <v-toolbar-title><strong>QUAI ALPHA</strong> <span class="font-weight-light">hackathon 2020</span>
             </v-toolbar-title>
             <v-spacer></v-spacer>
@@ -80,11 +81,11 @@
         </v-app-bar>
 
         <v-main>
-            <v-container fluid>
-                <transition name="fade" mode="out-in" appear>
-                    <router-view></router-view>
-                </transition>
-            </v-container>
+        <v-container fluid>
+        <transition name="fade" mode="out-in" appear>
+        <router-view></router-view>
+        </transition>
+        </v-container>
         </v-main>
     </div>
 
