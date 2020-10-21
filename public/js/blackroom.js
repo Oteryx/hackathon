@@ -2266,7 +2266,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "projectStatusDetail.vue",
   props: ['projectId'],
@@ -2292,10 +2291,14 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     changeStatusOpen: function changeStatusOpen() {
-      this.$store.dispatch('changeProjectStatusOpen', this.projectId);
+      // this.$store.dispatch('changeProjectStatusOpen', this.projectId);
+      this.projectStatus = 2;
+      this.confirmchangestatus = false;
     },
     changeStatusClose: function changeStatusClose() {
-      this.$store.dispatch('changeProjectStatusClose', this.projectId);
+      // this.$store.dispatch('changeProjectStatusClose', this.projectId);
+      this.projectStatus = 3;
+      this.confirmchangestatusclose = false;
     }
   },
   watch: {
@@ -113522,7 +113525,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.Pusher = __webpack_require__(/*! pusher-js */ "./node_modules/pusher-js/dist/web/pusher.js");
 window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   broadcaster: 'pusher',
-  key: "1",
+  key: "erferf",
   wsHost: window.location.hostname,
   wsPort: 6001,
   encrypted: false,
@@ -114305,19 +114308,16 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     },
     snackMessage: function snackMessage(state, payload) {
       state.snack = payload;
-    },
-    changeProjectStatusOpen: function changeProjectStatusOpen(state, payload) {
-      var project = state.projects.find(function (item) {
-        return item.id === payload;
-      });
-      project.status_id = 2;
-    },
-    changeProjectStatusClose: function changeProjectStatusClose(state, payload) {
-      var project = state.projects.find(function (item) {
-        return item.id === payload;
-      });
-      project.status_id = 3;
     }
+    /* changeProjectStatusOpen(state, payload) {
+         const project = state.projects.find(item => item.id === payload);
+         project.status_id = 2;
+      },
+     changeProjectStatusClose(state, payload) {
+         const project = state.projects.find(item => item.id === payload);
+         project.status_id = 3;
+      }*/
+
   },
   actions: {
     setSpots: function setSpots(_ref, payload) {
@@ -114468,15 +114468,14 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
           status: true
         });
       })["catch"](function (error) {});
-    },
-    changeProjectStatusOpen: function changeProjectStatusOpen(_ref14, payload) {
-      var commit = _ref14.commit;
-      commit("changeProjectStatusOpen", payload);
-    },
-    changeProjectStatusClose: function changeProjectStatusClose(_ref15, payload) {
-      var commit = _ref15.commit;
-      commit("changeProjectStatusClose", payload);
     }
+    /*changeProjectStatusOpen ({commit}, payload) {
+        commit("changeProjectStatusOpen", payload);
+    },
+    changeProjectStatusClose ({commit}, payload) {
+        commit("changeProjectStatusClose", payload);
+    },*/
+
   }
 }));
 

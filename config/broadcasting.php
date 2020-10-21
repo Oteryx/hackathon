@@ -38,7 +38,7 @@ return [
             'options' => [
                 'cluster' => env('PUSHER_APP_CLUSTER'),
                 'encrypted' => false,
-                'host' => 'hackathon2.demo',
+                'host' => 'hackathon3.demo',
                 'port' => 6001,
                 'scheme' => 'http'
             ],

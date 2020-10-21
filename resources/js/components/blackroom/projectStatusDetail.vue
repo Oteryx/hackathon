@@ -29,7 +29,6 @@
                         color="#e91e63"
                         @click="changeStatusOpen()"
                         class="white--text"
-
                     >
                         Confirmer
                     </v-btn>
@@ -137,6 +136,7 @@
                 pendingAction: true,
                 openAction: false,
                 closedAction: true,
+
             }
         },
         created: function () {
@@ -146,11 +146,14 @@
         },
         methods: {
             changeStatusOpen: function () {
-                this.$store.dispatch('changeProjectStatusOpen', this.projectId);
-
+               // this.$store.dispatch('changeProjectStatusOpen', this.projectId);
+                this.projectStatus = 2;
+                this.confirmchangestatus = false;
             },
             changeStatusClose: function () {
-                this.$store.dispatch('changeProjectStatusClose', this.projectId);
+               // this.$store.dispatch('changeProjectStatusClose', this.projectId);
+                this.projectStatus = 3;
+                this.confirmchangestatusclose = false;
             }
         },
         watch: {
