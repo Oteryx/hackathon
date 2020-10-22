@@ -1948,12 +1948,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {},
   created: function created() {
-    var _this = this;
-
     Echo.channel('projects').listen('.projectUpdated', function (e) {
       console.log(e);
-
-      _this.projects.unshift(e.project);
     });
   }
 });
@@ -105955,7 +105951,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.Pusher = __webpack_require__(/*! pusher-js */ "./node_modules/pusher-js/dist/web/pusher.js");
 window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   broadcaster: 'pusher',
-  key: "RUse88KWHkcpCLhzhPA5vJ5T",
+  key: "erferf",
   wsHost: window.location.hostname,
   wsPort: 6001,
   encrypted: false,
@@ -106140,8 +106136,8 @@ var opts = {};
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /boulots/formation/hackathon2/resources/js/home.js */"./resources/js/home.js");
-module.exports = __webpack_require__(/*! /boulots/formation/hackathon2/resources/sass/home.scss */"./resources/sass/home.scss");
+__webpack_require__(/*! C:\wamp64\www\laravel\hackathon3\resources\js\home.js */"./resources/js/home.js");
+module.exports = __webpack_require__(/*! C:\wamp64\www\laravel\hackathon3\resources\sass\home.scss */"./resources/sass/home.scss");
 
 
 /***/ })
