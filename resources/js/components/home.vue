@@ -84,7 +84,7 @@
     }
 
     .btn svg rect {
-    / / stroke: #EC0033;
+        //stroke: #EC0033;
         stroke-width: 4;
         stroke-dasharray: 353, 0;
         stroke-dashoffset: 0;

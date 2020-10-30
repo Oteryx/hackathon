@@ -1939,6 +1939,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -6417,7 +6418,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.transit {\n    transition: background-color 1s ease;\n}\n.btn {\n    margin-top:10px;\n    position: relative;\n    display: inline-block;\n\n\n    width: 420px;\n    height: 50px;\n    font-size: 1em;\n    font-weight: bold;\n    line-height: 60px;\n    text-align: center;\n    text-transform: uppercase;\n    background-color: transparent;\n    cursor: pointer;\n    text-decoration:none;\n    font-family: 'Roboto', sans-serif;\n    font-weight:900;\n    font-size:22px;\n    letter-spacing: 0.045em;\n    outline: 0;\n    margin-top:20px;\n}\n.btn svg {\n    position: absolute;\n    top: 0;\n    left: 0;\n}\n.btn svg rect {\n//stroke: #EC0033;\n    stroke-width: 4;\n    stroke-dasharray: 353, 0;\n    stroke-dashoffset: 0;\n    transition: all 600ms ease;\n}\n.btn span{\n    color: white;\n}\n.btn:hover svg rect {\n    stroke-width: 4;\n    stroke-dasharray: 353, 500;\n    stroke-dashoffset: 250;\n}\n", ""]);
+exports.push([module.i, "\n.transit {\n    transition: background-color 1s ease;\n}\n.btn {\n    margin-top: 10px;\n    position: relative;\n    display: inline-block;\n\n\n    width: 420px;\n    height: 50px;\n    font-size: 1em;\n    font-weight: bold;\n    line-height: 60px;\n    text-align: center;\n    text-transform: uppercase;\n    background-color: transparent;\n    cursor: pointer;\n    text-decoration: none;\n    font-family: 'Roboto', sans-serif;\n    font-weight: 900;\n    font-size: 22px;\n    letter-spacing: 0.045em;\n    outline: 0;\n    margin-top: 20px;\n}\n.btn svg {\n    position: absolute;\n    top: 0;\n    left: 0;\n}\n.btn svg rect {\n    //stroke: #EC0033;\n    stroke-width: 4;\n    stroke-dasharray: 353, 0;\n    stroke-dashoffset: 0;\n    transition: all 600ms ease;\n}\n.btn span {\n    color: white;\n}\n.btn:hover svg rect {\n    stroke-width: 4;\n    stroke-dasharray: 353, 500;\n    stroke-dashoffset: 250;\n}\n", ""]);
 
 // exports
 

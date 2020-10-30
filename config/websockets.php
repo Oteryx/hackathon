@@ -39,6 +39,7 @@ return [
      * will use the apps defined in this config file.
      *
      * You can create a custom provider by implementing the
+
      * `AppProvider` interface.
      */
     'app_provider' => BeyondCode\LaravelWebSockets\Apps\ConfigAppProvider::class,
