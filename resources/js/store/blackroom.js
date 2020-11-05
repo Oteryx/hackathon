@@ -34,7 +34,6 @@ export default new Vuex.Store({
         changeProjectStatusClose(state, payload) {
             const project = state.projects.find(item => item.id === payload);
             project.status_id = 3;
-
         },
     },
     actions: {
@@ -149,9 +148,21 @@ export default new Vuex.Store({
             });
         },
         changeProjectStatusOpen ({commit}, payload) {
+            axios.post(window.location.origin + "/api/projects/"+payload.id+"/openscoring", payload)
+                .then(response => {
+                    commit("setProjectsData", response.data);
+                    commit("snackMessage", {color:"success", text:"Statut modifié", status: true});
+                }).catch(error => {
+            });
             commit("changeProjectStatusOpen", payload);
         },
         changeProjectStatusClose ({commit}, payload) {
+            axios.post(window.location.origin + "/api/projects/"+payload.id+"/closescoring", payload)
+                .then(response => {
+                    commit("setProjectsData", response.data);
+                    commit("snackMessage", {color:"success", text:"Statut modifié", status: true});
+                }).catch(error => {
+            });
             commit("changeProjectStatusClose", payload);
         },
     }

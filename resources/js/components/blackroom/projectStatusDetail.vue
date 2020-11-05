@@ -145,7 +145,7 @@
         data: function () {
             return {
                 projectName: "",
-                projectStatus: "",
+                projectStatus: 1,
                 confirmchangestatus: false,
                 confirmchangestatusclose: false,
                 pendingAction: true,
