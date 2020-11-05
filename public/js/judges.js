@@ -2053,43 +2053,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "welcome.vue",
   props: ['projectId'],
   data: function data() {
     return {
       projectName: "",
-      projectStatus: "1",
+      projectStatus: "",
       Project: [{
         Name: "projet 1",
-        plateau: "1",
-        statuts: "1"
+        plateau: 1,
+        statuts: 1
       }, {
         Name: "projet 2",
-        plateau: "1",
-        statuts: "1"
+        plateau: 1,
+        statuts: 1
       }, {
         Name: "projet 3",
-        plateau: "1",
-        statuts: "2"
+        plateau: 1,
+        statuts: 2
       }, {
         Name: "projet 4",
-        plateau: "1",
-        statuts: "3"
+        plateau: 1,
+        statuts: 3
       }, {
         Name: "projet 5",
-        plateau: "1",
-        statuts: "2"
+        plateau: 1,
+        statuts: 3
       }]
     };
   },
@@ -6566,7 +6556,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.projet{\n    margin: auto;\n}\n\n", ""]);
+exports.push([module.i, "\n.projet {\n    margin: auto;\n}\n.test1{\n    visibility: hidden;\n}\n\n", ""]);
 
 // exports
 
@@ -48886,81 +48876,74 @@ var render = function() {
             _vm._v("Console log user data")
           ]),
           _vm._v(" "),
-          _c(
-            "v-btn",
-            { attrs: { color: "white" } },
-            [
-              _c("v-icon", { attrs: { color: "#C90F54" } }, [_vm._v("lock")]),
-              _vm._v(" "),
-              _c(
-                "span",
-                {
-                  staticStyle: { color: "#C90F54" },
-                  on: { click: _vm.logOut }
-                },
-                [_vm._v(" Déconnexion")]
-              )
-            ],
-            1
-          )
+          _c("v-btn", { attrs: { color: "white" } }, [
+            _c(
+              "span",
+              { staticStyle: { color: "#C90F54" }, on: { click: _vm.logOut } },
+              [_c("v-icon", [_vm._v("exit_to_app")])],
+              1
+            )
+          ])
         ],
         1
       ),
       _vm._v(" "),
       _c(
         "ul",
-        _vm._l(_vm.Project, function(pro) {
+        _vm._l(_vm.Project, function(pro, i) {
           return _c(
             "v-list-item",
+            { key: i },
             [
               _c(
                 "v-btn",
-                { staticClass: "projet" },
+                {
+                  staticClass: "projet",
+                  style: [
+                    pro.statuts === 1 ? { "background-color": "grey" } : {}
+                  ]
+                },
                 [
-                  _c(
-                    "v-list-item-icon",
-                    [
-                      _c("v-icon", { attrs: { large: "" } }, [
-                        _vm._v("build_circle")
-                      ])
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
                   _c(
                     "v-list-item-content",
                     [
                       _c("v-list-item-title", [
-                        _c("strong", [
-                          _vm._v(
-                            " " +
-                              _vm._s(pro.Name) +
-                              " Status:" +
-                              _vm._s(pro.statuts) +
-                              " "
-                          )
-                        ])
+                        _c(
+                          "strong",
+                          [
+                            _vm._v(
+                              " " +
+                                _vm._s(pro.Name) +
+                                "    \n                            "
+                            ),
+                            _c(
+                              "v-icon",
+                              {
+                                staticClass: "test1",
+                                style: [
+                                  pro.statuts === 2
+                                    ? { visibility: "visible" }
+                                    : {}
+                                ]
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                how_to_vote\n                            "
+                                )
+                              ]
+                            ),
+                            _vm._v(
+                              "\n                                Status:" +
+                                _vm._s(pro.statuts) +
+                                " "
+                            )
+                          ],
+                          1
+                        )
                       ])
                     ],
                     1
-                  ),
-                  _vm._v(" "),
-                  _c("v-list-item-action", [
-                    _c(
-                      "div",
-                      [
-                        _c(
-                          "v-chip",
-                          {
-                            attrs: { color: "#c90f54", "text-color": "white" }
-                          },
-                          [_c("strong", [_vm._v(" 0 / 10")])]
-                        ),
-                        _vm._v("   \n            ")
-                      ],
-                      1
-                    )
-                  ])
+                  )
                 ],
                 1
               )

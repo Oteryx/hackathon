@@ -10,8 +10,7 @@
             <v-spacer></v-spacer>
             <v-btn @click="consoleUser">Console log user data</v-btn>
             <v-btn color="white">
-                <v-icon color="#C90F54">lock</v-icon>
-                <span style="color:#C90F54" @click="logOut">&nbsp;Déconnexion</span>
+                <span style="color:#C90F54" @click="logOut"><v-icon>exit_to_app</v-icon></span>
             </v-btn>
         </v-app-bar>
         <ul>
@@ -19,11 +18,11 @@
                 v-for="(pro,i) in Project"
                 :key="i"
             >
-                <v-btn class="projet" :style="[pro.statuts === 1 ? {'background-color':'#c90f54 !important'}: {}]">
+                <v-btn class="projet" :style="[pro.statuts === 1 ? {'background-color':'grey'}: {}]" >
                     <v-list-item-content >
                         <v-list-item-title>
                             <strong> {{ pro.Name }} &nbsp;&nbsp;&nbsp;
-                                <v-icon :style="[ pro.statuts === 2 ? {'visibility':'visible !important'}: {}]" >
+                                <v-icon class="test1" :style="[ pro.statuts === 2 ? {'visibility':'visible'}: {}]" >
                                     how_to_vote
                                 </v-icon>
                                 &nbsp;&nbsp;&nbsp; Status:{{pro.statuts}} </strong>
@@ -46,28 +45,28 @@
                 Project: [
                     {
                         Name: "projet 1",
-                        plateau: "1",
-                        statuts: "1"
+                        plateau: 1,
+                        statuts: 1
                     },
                     {
                         Name: "projet 2",
-                        plateau: "1",
-                        statuts: "1"
+                        plateau: 1,
+                        statuts:1
                     },
                     {
                         Name: "projet 3",
-                        plateau: "1",
-                        statuts: "2"
+                        plateau: 1,
+                        statuts: 2
                     },
                     {
                         Name: "projet 4",
-                        plateau: "1",
-                        statuts: "3"
+                        plateau: 1,
+                        statuts: 3
                     },
                     {
                         Name: "projet 5",
-                        plateau: "1",
-                        statuts: "3"
+                        plateau: 1,
+                        statuts: 3
                     },
                 ],
             }
@@ -86,6 +85,9 @@
 <style>
     .projet {
         margin: auto;
+    }
+    .test1{
+        visibility: hidden;
     }
 
 </style>

@@ -26,7 +26,7 @@ export default new Vuex.Store({
         snackMessage(state, payload) {
             state.snack = payload;
         },
-       /* changeProjectStatusOpen(state, payload) {
+        changeProjectStatusOpen(state, payload) {
             const project = state.projects.find(item => item.id === payload);
             project.status_id = 2;
 
@@ -35,7 +35,7 @@ export default new Vuex.Store({
             const project = state.projects.find(item => item.id === payload);
             project.status_id = 3;
 
-        }*/
+        },
     },
     actions: {
         setSpots({commit}, payload) {
@@ -148,12 +148,12 @@ export default new Vuex.Store({
                 }).catch(error => {
             });
         },
-        /*changeProjectStatusOpen ({commit}, payload) {
+        changeProjectStatusOpen ({commit}, payload) {
             commit("changeProjectStatusOpen", payload);
         },
         changeProjectStatusClose ({commit}, payload) {
             commit("changeProjectStatusClose", payload);
-        },*/
+        },
     }
 })
 
